@@ -1,4 +1,6 @@
+# NORANDR
 # xorg-mode-tools
+
 
 Two small Free Pascal console programs for fixing broken Xorg display
 configuration on old hardware **from a text TTY**, without depending on
