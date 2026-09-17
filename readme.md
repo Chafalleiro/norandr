@@ -4,7 +4,7 @@ Two small Free Pascal console programs for fixing broken Xorg display
 configuration on old hardware **from a text TTY**, without depending on
 `xrandr`, a running X session, or Wayland.
 
-- `xorgmode` — generic Xorg fix. Calls `cvt`, finds the active DRM
+- `norandr` — generic Xorg fix. Calls `cvt`, finds the active DRM
   connector, detects the kernel driver, and writes
   `/etc/X11/xorg.conf.d/10-monitor.conf`.
 - `nvidia-norandr` — NVIDIA-specific fix. Patches an existing
@@ -77,15 +77,15 @@ sudo apt install fpc x11-xserver-utils      # Debian/Ubuntu
 sudo dnf install fpc xorg-x11-server-utils  # Fedora
 sudo pacman -S fpc xorg-xrandr xorg-server  # Arch (cvt is in xorg-server)
 
-fpc xorgmode.pas
+fpc norandr.pas
 fpc nvidia-norandr.pas
 ```
 
-You get two binaries: `xorgmode` and `nvidia-norandr`.
+You get two binaries: `norandr` and `nvidia-norandr`.
 
 ---
 
-## 3. `xorgmode` — generic Xorg fix
+## 3. `norandr` — generic Xorg fix
 
 Use this when the GPU driver is `intel`, `amdgpu`, `radeon`,
 `nouveau`, `modesetting`, or any driver that respects a Modeline
@@ -168,7 +168,7 @@ R                 restart display manager
 Q                 quit
 ```
 
-### When to use `xorgmode`
+### When to use `norandr`
 
 - Intel / AMD / Nouveau / modesetting machines where the correct mode
   can be forced via a Modeline.
@@ -488,7 +488,7 @@ exactly which files were removed.
 
 Generic Intel / AMD machine, monitor not detected:
 
-1. `sudo ./xorgmode`
+1. `sudo ./norandr`
 2. Type width/height, press `C`, `F`, `D`, `W`.
 3. Press `R`.
 4. If the desktop comes up broken: section 5.
