@@ -475,7 +475,7 @@ refresh rate by 5–10 Hz. On NVIDIA, narrowing the `VertRefresh` range
 
 | Tool              | File                                   | Backup pattern                        |
 |-------------------|----------------------------------------|---------------------------------------|
-| `xorgmode`        | `/etc/X11/xorg.conf.d/10-monitor.conf` | `10-monitor.conf.bak.YYYYMMDDHHMMSS`  |
+| `norandr`        | `/etc/X11/xorg.conf.d/10-monitor.conf` | `10-monitor.conf.bak.YYYYMMDDHHMMSS`  |
 | `nvidia-norandr`  | `/etc/X11/xorg.conf`                   | `xorg.conf.bak.YYYYMMDDHHMMSS`        |
 
 Nothing else is touched. No user config is modified by the tools; the
